@@ -4,6 +4,7 @@ import 'package:dreams_sample/data/vos/blog_header/blog_header_vo.dart';
 import 'package:dreams_sample/network/data_agent/dreams_data_agent.dart';
 import 'package:dreams_sample/network/data_agent/dreams_data_agent_impl.dart';
 
+///DataAgent က ရလာမယ့် dreams data တွေကို modify လုပ်ဖို့အတွက် concrete class
 class DreamsModelImpl extends DreamsModel {
   DreamsModelImpl._();
 
