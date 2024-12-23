@@ -4,6 +4,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'blog_response.g.dart';
 
+///Blog API မှ ရလာမယ့် response အတွက် class
 @JsonSerializable()
 class BlogResponse {
   @JsonKey(name: 'BlogHeader')
