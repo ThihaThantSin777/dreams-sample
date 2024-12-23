@@ -9,6 +9,7 @@ part of 'blog_details_vo.dart';
 BlogDetailsVO _$BlogDetailsVOFromJson(Map<String, dynamic> json) =>
     BlogDetailsVO(
       blogDetailId: (json['BlogDetailId'] as num).toInt(),
+
       blogId: (json['BlogId'] as num).toInt(),
       blogContent: json['BlogContent'] as String,
     );
