@@ -11,9 +11,13 @@ class BlogHeaderVO {
   @JsonKey(name: 'BlogTitle')
   final String title;
 
+  String? prefixWord;
+
   BlogHeaderVO({
     required this.id,
     required this.title,
+    this.prefixWord,
+
   });
 
   factory BlogHeaderVO.fromJson(Map<String, dynamic> json) => _$BlogHeaderVOFromJson(json);
