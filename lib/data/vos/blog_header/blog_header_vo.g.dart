@@ -12,7 +12,6 @@ BlogHeaderVO _$BlogHeaderVOFromJson(Map<String, dynamic> json) => BlogHeaderVO(
     );
 
 Map<String, dynamic> _$BlogHeaderVOToJson(BlogHeaderVO instance) => <String, dynamic>{
-
       'BlogId': instance.id,
       'BlogTitle': instance.title,
     };
