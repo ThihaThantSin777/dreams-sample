@@ -4,7 +4,7 @@ part 'blog_details_vo.g.dart';
 
 ///Blog Details Attribute အတွက် VO class
 @JsonSerializable()
-class BlogDetail {
+class BlogDetailsVO {
   @JsonKey(name: 'Id')
   final int id;
 
@@ -17,14 +17,14 @@ class BlogDetail {
   @JsonKey(name: 'Content')
   final String content;
 
-  BlogDetail({
+  BlogDetailsVO({
     required this.id,
     required this.blogId,
     required this.title,
     required this.content,
   });
 
-  factory BlogDetail.fromJson(Map<String, dynamic> json) => _$BlogDetailFromJson(json);
+  factory BlogDetailsVO.fromJson(Map<String, dynamic> json) => _$BlogDetailsVOFromJson(json);
 
-  Map<String, dynamic> toJson() => _$BlogDetailToJson(this);
+  Map<String, dynamic> toJson() => _$BlogDetailsVOToJson(this);
 }
