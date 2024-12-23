@@ -6,13 +6,12 @@ part of 'blog_header_vo.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-BlogHeader _$BlogHeaderFromJson(Map<String, dynamic> json) => BlogHeader(
+BlogHeaderVO _$BlogHeaderVOFromJson(Map<String, dynamic> json) => BlogHeaderVO(
       id: (json['Id'] as num).toInt(),
       title: json['Title'] as String,
     );
 
-Map<String, dynamic> _$BlogHeaderToJson(BlogHeader instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$BlogHeaderVOToJson(BlogHeaderVO instance) => <String, dynamic>{
       'Id': instance.id,
       'Title': instance.title,
     };
