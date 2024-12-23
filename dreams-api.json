@@ -1,6 +1,6 @@
 {
-  "status": "true,",
-  "message": "\"Success\"",
+  "status": true,
+  "message": "Success",
   "data": {
     "BlogHeader": [
       {
