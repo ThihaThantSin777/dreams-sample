@@ -7,8 +7,8 @@ part of 'dreams_response.dart';
 // **************************************************************************
 
 DreamsResponse _$DreamsResponseFromJson(Map<String, dynamic> json) => DreamsResponse(
-      blogHeader: BlogHeader.fromJson(json['BlogHeader'] as Map<String, dynamic>),
-      blogDetail: BlogDetail.fromJson(json['BlogDetails'] as Map<String, dynamic>),
+      blogHeader: BlogHeaderVO.fromJson(json['BlogHeader'] as Map<String, dynamic>),
+      blogDetail: BlogDetailsVO.fromJson(json['BlogDetails'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$DreamsResponseToJson(DreamsResponse instance) => <String, dynamic>{
