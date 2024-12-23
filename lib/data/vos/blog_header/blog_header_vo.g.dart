@@ -7,14 +7,14 @@ part of 'blog_header_vo.dart';
 // **************************************************************************
 
 BlogHeaderVO _$BlogHeaderVOFromJson(Map<String, dynamic> json) => BlogHeaderVO(
-      id: (json['Id'] as num).toInt(),
-      title: json['Title'] as String,
+      id: (json['BlogId'] as num).toInt(),
+      title: json['BlogTitle'] as String,
       prefixWord: json['prefixWord'] as String?,
     );
 
 Map<String, dynamic> _$BlogHeaderVOToJson(BlogHeaderVO instance) =>
     <String, dynamic>{
-      'Id': instance.id,
-      'Title': instance.title,
+      'BlogId': instance.id,
+      'BlogTitle': instance.title,
       'prefixWord': instance.prefixWord,
     };

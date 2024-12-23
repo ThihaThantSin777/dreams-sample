@@ -29,6 +29,10 @@ class DreamsModelImpl extends DreamsModel {
   Future<List<BlogHeaderVO>> getBlogHeaders() async {
     try {
       var result = await _dreamsDataAgent.getBlogHeaders();
+      result = result.map((element) {
+        element.prefixWord = _getPrefixWord(element.title);
+        return element;
+      }).toList();
       return result;
     } catch (error) {
       rethrow;

@@ -8,16 +8,14 @@ part of 'blog_details_vo.dart';
 
 BlogDetailsVO _$BlogDetailsVOFromJson(Map<String, dynamic> json) =>
     BlogDetailsVO(
-      id: (json['Id'] as num).toInt(),
+      blogDetailId: (json['BlogDetailId'] as num).toInt(),
       blogId: (json['BlogId'] as num).toInt(),
-      title: json['Title'] as String,
-      content: json['Content'] as String,
+      blogContent: json['BlogContent'] as String,
     );
 
 Map<String, dynamic> _$BlogDetailsVOToJson(BlogDetailsVO instance) =>
     <String, dynamic>{
-      'Id': instance.id,
+      'BlogDetailId': instance.blogDetailId,
       'BlogId': instance.blogId,
-      'Title': instance.title,
-      'Content': instance.content,
+      'BlogContent': instance.blogContent,
     };

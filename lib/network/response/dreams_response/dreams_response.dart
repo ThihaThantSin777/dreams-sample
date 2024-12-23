@@ -10,7 +10,7 @@ class DreamsResponse {
   @JsonKey(name: 'BlogHeader')
   final List<BlogHeaderVO> blogHeader;
 
-  @JsonKey(name: 'BlogDetails')
+  @JsonKey(name: 'BlogDetail')
   final List<BlogDetailsVO> blogDetail;
 
   DreamsResponse({required this.blogHeader, required this.blogDetail});
