@@ -16,7 +16,7 @@ class DreamsDataAgentImpl extends DreamsDataAgent {
 
   ///Dreams Blog Details တွေကိုပဲ filter မယ့် method
   @override
-  Future<BlogDetailsVO> getBlogDetails() async {
+  Future<List<BlogDetailsVO>> getBlogDetails() async {
     try {
       final result = await _dreamsAPI.getDreamsData();
       if (result.status) {
@@ -31,7 +31,7 @@ class DreamsDataAgentImpl extends DreamsDataAgent {
 
   ///Dreams Blog Header တွေကိုပဲ filter မယ့် method
   @override
-  Future<BlogHeaderVO> getBlogHeaders() async {
+  Future<List<BlogHeaderVO>> getBlogHeaders() async {
     try {
       final result = await _dreamsAPI.getDreamsData();
       if (result.status) {
