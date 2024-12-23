@@ -30,6 +30,8 @@ class DreamsModelImpl extends DreamsModel {
   Future<List<BlogHeaderVO>> getBlogHeaders() async {
     try {
       var result = await _dreamsDataAgent.getBlogHeaders();
+
+      ///title ထဲက prefix စာလုံးတွေကို သပ်သပ်ဆွဲယူပြီး prefixWord attribute ထဲ ထည့်မယ်။
       result = result.map((element) {
         element.prefixWord = _getPrefixWord(element.title);
         return element;
