@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:dreams_sample/network/api/api_constant.dart';
 import 'package:dreams_sample/network/response/base_response.dart';
 
-///
+///Dreams API တွေ အဓိက fetch မယ့် class
 class DreamsAPI {
   DreamsAPI._();
 
@@ -12,6 +12,7 @@ class DreamsAPI {
 
   final Dio _dio = Dio();
 
+  ///Dreams Data တွေကို အဓိက ယူမယ့် method
   Future<BaseResponse> getDreamsData() async {
     try {
       final response = await _dio.get(kGetDreamsDataEndPoint);
@@ -29,6 +30,7 @@ class DreamsAPI {
     }
   }
 
+  ///API call ခေါ်ရင်းနဲ့ exception တစ်ခုခုရှိလာရင် error type ပေါ်မူတည်ပီး လိုအပ်သလို type cast ပြီး return ပေးမယ့် method
   Object _throwException(DioException error) {
     if (error.type == DioExceptionType.connectionError ||
         error.type == DioExceptionType.receiveTimeout ||
