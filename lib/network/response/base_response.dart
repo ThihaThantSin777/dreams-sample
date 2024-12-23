@@ -3,6 +3,8 @@ import 'package:json_annotation/json_annotation.dart';
 part 'base_response.g.dart';
 
 @JsonSerializable()
+
+///Response base class
 class BaseResponse {
   final bool status;
   final String message;
