@@ -13,5 +13,5 @@ DreamsResponse _$DreamsResponseFromJson(Map<String, dynamic> json) => DreamsResp
 
 Map<String, dynamic> _$DreamsResponseToJson(DreamsResponse instance) => <String, dynamic>{
       'BlogHeader': instance.blogHeader,
-      'BlogDetails': instance.blogDetail,
+      'BlogDetail': instance.blogDetail,
     };
