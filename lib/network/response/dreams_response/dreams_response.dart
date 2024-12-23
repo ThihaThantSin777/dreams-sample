@@ -8,10 +8,10 @@ part 'dreams_response.g.dart';
 @JsonSerializable()
 class DreamsResponse {
   @JsonKey(name: 'BlogHeader')
-  final BlogHeaderVO blogHeader;
+  final List<BlogHeaderVO> blogHeader;
 
   @JsonKey(name: 'BlogDetails')
-  final BlogDetailsVO blogDetail;
+  final List<BlogDetailsVO> blogDetail;
 
   DreamsResponse({required this.blogHeader, required this.blogDetail});
 
