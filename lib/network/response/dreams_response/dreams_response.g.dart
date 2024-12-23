@@ -6,12 +6,18 @@ part of 'dreams_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-DreamsResponse _$DreamsResponseFromJson(Map<String, dynamic> json) => DreamsResponse(
-      blogHeader: BlogHeaderVO.fromJson(json['BlogHeader'] as Map<String, dynamic>),
-      blogDetail: BlogDetailsVO.fromJson(json['BlogDetails'] as Map<String, dynamic>),
+DreamsResponse _$DreamsResponseFromJson(Map<String, dynamic> json) =>
+    DreamsResponse(
+      blogHeader: (json['BlogHeader'] as List<dynamic>)
+          .map((e) => BlogHeaderVO.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      blogDetail: (json['BlogDetails'] as List<dynamic>)
+          .map((e) => BlogDetailsVO.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
-Map<String, dynamic> _$DreamsResponseToJson(DreamsResponse instance) => <String, dynamic>{
+Map<String, dynamic> _$DreamsResponseToJson(DreamsResponse instance) =>
+    <String, dynamic>{
       'BlogHeader': instance.blogHeader,
       'BlogDetails': instance.blogDetail,
     };
