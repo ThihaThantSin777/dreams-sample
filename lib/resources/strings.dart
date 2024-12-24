@@ -19,3 +19,6 @@ const kConnectTimeOutErrorText = 'Unable to connect to the server. Please check 
 
 ///Null Value Return Text
 const kNullValueReturnText = 'Fetching Data got null value';
+
+///Required Text
+const kRequiredText = 'Required';
