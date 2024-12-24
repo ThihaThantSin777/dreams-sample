@@ -1,6 +1,8 @@
 import 'package:dreams_sample/pages/add_note_page.dart';
 import 'package:dreams_sample/pages/dreams_details_page.dart';
 import 'package:dreams_sample/pages/note_list_page.dart';
+import 'package:dreams_sample/resources/dimens.dart';
+import 'package:dreams_sample/resources/strings.dart';
 import 'package:dreams_sample/widgets/touchable_list_tile_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +28,7 @@ class DreamsListPage extends StatelessWidget {
       ),
       appBar: AppBar(
         title: const Text(
-          'Explore your dreams meaning',
+          kDreamListTitleText,
         ),
         actions: [
           IconButton(
@@ -58,7 +60,7 @@ class _DreamsListView extends StatelessWidget {
       },
       itemCount: 10,
       separatorBuilder: (_, index) => const SizedBox(
-        height: 10,
+        height: kSP10x,
       ),
     );
   }

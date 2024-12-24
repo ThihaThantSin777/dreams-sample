@@ -3,6 +3,9 @@ import 'package:dreams_sample/data/vos/blog_header/blog_header_vo.dart';
 import 'package:dreams_sample/network/response/dreams_response/dreams_response.dart';
 import 'package:dreams_sample/pages/dreams_list_page.dart';
 import 'package:dreams_sample/persistent/constant.dart';
+import 'package:dreams_sample/resources/colors.dart';
+import 'package:dreams_sample/resources/dimens.dart';
+import 'package:dreams_sample/resources/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -27,19 +30,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Dreams Sample',
+      title: kAppNameText,
       theme: ThemeData(
         floatingActionButtonTheme: FloatingActionButtonThemeData(
-          backgroundColor: Colors.blue,
+          backgroundColor: kPrimaryColor,
         ),
         appBarTheme: AppBarTheme(
           iconTheme: IconThemeData(
             color: Colors.white,
           ),
-          color: Colors.blue,
+          color: kPrimaryColor,
           titleTextStyle: TextStyle(
             color: Colors.white,
-            fontSize: 21,
+            fontSize: kFontSize21x,
           ),
         ),
       ),
