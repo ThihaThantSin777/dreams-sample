@@ -1,3 +1,4 @@
+import 'package:dreams_sample/widgets/text_field_widget.dart';
 import 'package:flutter/material.dart';
 
 ///Note အသစ်ထည့်ရင် ပြပေးမယ့် widget class
@@ -20,19 +21,11 @@ class AddNotePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ///Add Note TextField View
-                TextFormField(
-                  maxLines: null,
-                  validator: (text) {
-                    if (text == null || text.isEmpty) {
-                      return "Required";
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Write your note',
-                    prefixIcon: Icon(Icons.note_add),
-                  ),
+                TextFieldWidget(
+                  isAddValidator: true,
+                  hintText: 'Write your note',
+                  prefixIcon: Icons.note_add,
+                  onChanged: (text) {},
                 ),
 
                 ///Add Button View
