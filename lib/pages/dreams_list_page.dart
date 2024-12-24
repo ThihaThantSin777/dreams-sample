@@ -3,6 +3,7 @@ import 'package:dreams_sample/pages/dreams_details_page.dart';
 import 'package:dreams_sample/pages/note_list_page.dart';
 import 'package:dreams_sample/resources/dimens.dart';
 import 'package:dreams_sample/resources/strings.dart';
+import 'package:dreams_sample/utils/context_extensions.dart';
 import 'package:dreams_sample/widgets/touchable_list_tile_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -15,11 +16,7 @@ class DreamsListPage extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (_) => NoteListPage(),
-            ),
-          );
+          context.navigateToNextPage(NoteListPage());
         },
         child: const Icon(
           Icons.note_rounded,
@@ -33,11 +30,7 @@ class DreamsListPage extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => AddNotePage(),
-                ),
-              );
+              context.navigateToNextPage(AddNotePage());
             },
             icon: const Icon(Icons.note_add),
           )
@@ -74,13 +67,9 @@ class _DreamsItemView extends StatelessWidget {
   Widget build(BuildContext context) {
     return TouchableListTileWidget(
       onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (_) => DreamsDetailsPage(
-              title: 'This is Title',
-            ),
-          ),
-        );
+        context.navigateToNextPage(DreamsDetailsPage(
+          title: 'This is Title',
+        ));
       },
       subTitle: 'Explore more',
       title: 'This is Title',
