@@ -1,6 +1,7 @@
 import 'package:dreams_sample/bloc/add_note_bloc.dart';
 import 'package:dreams_sample/resources/dimens.dart';
 import 'package:dreams_sample/resources/strings.dart';
+import 'package:dreams_sample/utils/context_extensions.dart';
 import 'package:dreams_sample/widgets/text_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -35,22 +36,25 @@ class AddNotePage extends StatelessWidget {
                       prefixIcon: Icons.note_add,
                       onChanged: (userNote) {
                         bloc.setUserNote(userNote);
+                        context.navigateToBack();
                       },
                     );
                   }),
 
                   ///Add Button View
-                  MaterialButton(
-                    minWidth: double.infinity,
-                    height: kAddButtonHeight,
-                    color: Colors.blue,
-                    textColor: Colors.white,
-                    onPressed: () {
-                      final bloc = context.read<AddNoteBloc>();
-                      bloc.onTapAdd();
-                    },
-                    child: Text(kAddNoteButtonText),
-                  ),
+                  Builder(builder: (context) {
+                    return MaterialButton(
+                      minWidth: double.infinity,
+                      height: kAddButtonHeight,
+                      color: Colors.blue,
+                      textColor: Colors.white,
+                      onPressed: () {
+                        final bloc = context.read<AddNoteBloc>();
+                        bloc.onTapAdd();
+                      },
+                      child: Text(kAddNoteButtonText),
+                    );
+                  }),
                 ],
               ),
             ),
