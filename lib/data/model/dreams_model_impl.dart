@@ -5,6 +5,7 @@ import 'package:dreams_sample/network/data_agent/dreams_data_agent.dart';
 import 'package:dreams_sample/network/data_agent/dreams_data_agent_impl.dart';
 import 'package:dreams_sample/persistent/dao/dreams_dao.dart';
 import 'package:dreams_sample/persistent/dao/dreams_dao_impl.dart';
+import 'package:dreams_sample/utils/mm_character_utils.dart';
 
 ///DataAgent က ရလာမယ့် dreams data တွေကို modify လုပ်ဖို့အတွက် concrete class
 class DreamsModelImpl extends DreamsModel {
@@ -52,7 +53,7 @@ class DreamsModelImpl extends DreamsModel {
 
         ///title ထဲက prefix စာလုံးတွေကို သပ်သပ်ဆွဲယူပြီး prefixWord attribute ထဲ ထည့်မယ်။
         result = result.map((element) {
-          element.prefixWord = _getPrefixWord(element.title);
+          element.prefixWord = MmCharacterUtils.getMMPrefixWord(element.title);
           return element;
         }).toList();
         return result;
@@ -64,20 +65,12 @@ class DreamsModelImpl extends DreamsModel {
 
       ///title ထဲက prefix စာလုံးတွေကို သပ်သပ်ဆွဲယူပြီး prefixWord attribute ထဲ ထည့်မယ်။
       result = result.map((element) {
-        element.prefixWord = _getPrefixWord(element.title);
+        element.prefixWord = MmCharacterUtils.getMMPrefixWord(element.title);
         return element;
       }).toList();
       return result;
     } catch (error) {
       rethrow;
     }
-  }
-
-  ///Dreams Blog Header ထဲကနေ မြန်မာ အက္ခရာ တစ်လုံးကို ယူပေးမယ့် method
-  String _getPrefixWord(String text) {
-    RegExp regex = RegExp(r'\[ (.*?) \]');
-    final match = regex.firstMatch(text);
-    String extractedValue = match?.group(1) ?? '';
-    return extractedValue;
   }
 }
