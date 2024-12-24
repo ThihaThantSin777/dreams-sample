@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+///ListTile ကို onTap Action ပါတဲ့ reusable widget class
 class TouchableListTileWidget extends StatelessWidget {
   const TouchableListTileWidget({
     super.key,
