@@ -1,3 +1,4 @@
+import 'package:dreams_sample/resources/strings.dart';
 import 'package:flutter/material.dart';
 
 ///TextDecoration တွေပါတဲ့ reusable textField widget class
@@ -23,7 +24,7 @@ class TextFieldWidget extends StatelessWidget {
       validator: isAddValidator
           ? (text) {
               if (text == null || text.isEmpty) {
-                return "Required";
+                return kRequiredText;
               }
               return null;
             }
