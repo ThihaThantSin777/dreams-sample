@@ -1,3 +1,5 @@
+import 'package:dreams_sample/resources/dimens.dart';
+import 'package:dreams_sample/resources/strings.dart';
 import 'package:dreams_sample/widgets/touchable_list_tile_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +11,7 @@ class NoteListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Note List'),
+        title: const Text(kNoteListTitleText),
       ),
       body: _NoteListView(),
     );
@@ -28,7 +30,7 @@ class _NoteListView extends StatelessWidget {
       },
       itemCount: 10,
       separatorBuilder: (_, index) => const SizedBox(
-        height: 10,
+        height: kSP10x,
       ),
     );
   }
