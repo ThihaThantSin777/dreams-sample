@@ -1,6 +1,7 @@
 import 'package:dreams_sample/pages/add_note_page.dart';
 import 'package:dreams_sample/pages/dreams_details_page.dart';
 import 'package:dreams_sample/pages/note_list_page.dart';
+import 'package:dreams_sample/widgets/touchable_list_tile_widget.dart';
 import 'package:flutter/material.dart';
 
 ///Dreams List တွေကို ပြပေးမယ့် widget class
@@ -69,18 +70,19 @@ class _DreamsItemView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
+    return TouchableListTileWidget(
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (_) => DreamsDetailsPage(title: 'This is Title'),
+            builder: (_) => DreamsDetailsPage(
+              title: 'This is Title',
+            ),
           ),
         );
       },
-      leading: const Icon(Icons.pageview),
-      title: const Text('This is Title'),
-      subtitle: const Text('Explore more'),
-      trailing: const Icon(Icons.arrow_circle_right),
+      subTitle: 'Explore more',
+      title: 'This is Title',
+      leadingIcon: Icons.pageview,
     );
   }
 }

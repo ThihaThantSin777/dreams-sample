@@ -1,3 +1,4 @@
+import 'package:dreams_sample/widgets/touchable_list_tile_widget.dart';
 import 'package:flutter/material.dart';
 
 ///Save ထားတဲ့ note list တွေပြဖို့အတွက် widget class
@@ -39,11 +40,11 @@ class _NoteItemView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: const Icon(Icons.pageview),
-      title: const Text('This is Title'),
-      subtitle: const Text('Explore more'),
-      trailing: const Icon(Icons.arrow_circle_right),
+    return TouchableListTileWidget(
+      onTap: () {},
+      subTitle: 'Explore more',
+      title: 'This is Title',
+      leadingIcon: Icons.pageview,
     );
   }
 }

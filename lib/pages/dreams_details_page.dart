@@ -1,3 +1,5 @@
+import 'package:dreams_sample/widgets/text_field_widget.dart';
+import 'package:dreams_sample/widgets/touchable_list_tile_widget.dart';
 import 'package:flutter/material.dart';
 
 ///Dreams Details Page အတွက် widget class
@@ -33,13 +35,15 @@ class _DreamsDetailsSearchAndListView extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          TextField(
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Search',
-              prefixIcon: Icon(Icons.search),
-            ),
+          ///Search Text Field View
+          TextFieldWidget(
+            isAddValidator: true,
+            hintText: 'Search',
+            prefixIcon: Icons.search,
+            onChanged: (text) {},
           ),
+
+          ///Dreams List View
           Expanded(
             child: _DreamsListView(),
           ),
@@ -96,11 +100,11 @@ class _DreamsItemView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: const Icon(Icons.pageview),
-      title: const Text('This is Title'),
-      subtitle: const Text('Explore more'),
-      trailing: const Icon(Icons.arrow_circle_right),
+    return TouchableListTileWidget(
+      onTap: () {},
+      subTitle: 'Explore more',
+      title: 'This is Title',
+      leadingIcon: Icons.pageview,
     );
   }
 }
