@@ -7,13 +7,15 @@ class TouchableListTileWidget extends StatelessWidget {
     required this.onTap,
     required this.subTitle,
     required this.title,
-    required this.leadingIcon,
+    required this.leadingWidget,
+    this.isShowTrailing = true,
   });
 
-  final IconData leadingIcon;
+  final Widget leadingWidget;
   final String title;
   final String subTitle;
   final Function onTap;
+  final bool isShowTrailing;
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +23,10 @@ class TouchableListTileWidget extends StatelessWidget {
       onTap: () {
         onTap();
       },
-      leading: Icon(leadingIcon),
+      leading: leadingWidget,
       title: Text(title),
       subtitle: Text(subTitle),
-      trailing: const Icon(Icons.arrow_circle_right),
+      trailing: isShowTrailing ? const Icon(Icons.arrow_circle_right) : null,
     );
   }
 }
